@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Order": {
+      "title": "Order",
+      "description": "Represents a customer order for spices.",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "description": "List of items in the order"
+        },
+        "subtotal": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "total": { "type": "number" },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "address": { "type": "string" }
+          },
+          "required": ["name", "email", "phone", "address"]
+        },
+        "payment": {
+          "type": "object",
+          "properties": {
+            "method": { "type": "string" },
+            "status": { "type": "string" },
+            "razorpayOrderId": { "type": "string" },
+            "razorpayPaymentId": { "type": "string" },
+            "razorpaySignature": { "type": "string" }
+          }
+        },
+        "orderStatus": { "type": "string", "enum": ["pending", "paid", "failed", "processing", "shipped", "delivered"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "total", "customer", "orderStatus", "createdAt"]
+    }
+  },
+  "firestore": {
+    "orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders collection"
+    }
+  }
+}

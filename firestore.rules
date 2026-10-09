@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Orders Collection
+    match /orders/{orderId} {
+      // Allow user to get their own order if they have the ID (e.g. after redirect)
+      // In a real app, we'd use auth.uid, but for this demo we'll restrict to get only.
+      allow get: if true; 
+      
+      // Writes are strictly server-side (Admin SDK bypasses these rules)
+      allow create, update, delete: if false;
+    }
+
+    // Helper functions for future expansion
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+  }
+}
