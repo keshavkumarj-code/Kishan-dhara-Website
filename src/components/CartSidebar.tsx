@@ -433,7 +433,7 @@ export default function CartSidebar({ isOpen, onClose }: { isOpen: boolean, onCl
                   {/* WhatsApp Support */}
                   <div className="flex flex-col gap-4 items-center justify-center pt-2">
                     <a 
-                      href="https://wa.me/918796912856" 
+                      href="https://wa.me/91xxxxxxxx" 
                       target="_blank" 
                       rel="noreferrer"
                       className="flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-xl shadow-green/20"

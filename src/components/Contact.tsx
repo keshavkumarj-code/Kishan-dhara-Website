@@ -24,7 +24,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xl font-serif font-bold text-earth mb-1">WhatsApp / Call</h4>
-                  <p className="text-lg font-medium text-accent hover:text-earth cursor-pointer transition-colors">8796912856</p>
+                  <a href="https://wa.me/91xxxxxxxx" target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-accent hover:text-earth cursor-pointer transition-colors block">91xxxxxxxx</a>
                 </div>
               </div>
 
@@ -34,7 +34,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xl font-serif font-bold text-earth mb-1">Email Us</h4>
-                  <p className="text-lg font-medium text-accent hover:text-earth cursor-pointer transition-colors">kisandharafoods@gmail.com</p>
+                  <a href="mailto:kejnsckfnd@gmail.com" className="text-lg font-medium text-accent hover:text-earth cursor-pointer transition-colors block">kejnsckfnd@gmail.com</a>
                 </div>
               </div>
 
@@ -51,7 +51,7 @@ export default function Contact() {
 
             <div className="mt-12">
               <a 
-                href="https://wa.me/8796912856" 
+                href="https://wa.me/91xxxxxxxx" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg active:scale-95"
